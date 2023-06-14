@@ -115,6 +115,9 @@ button {
   border: none;
   font-size: 18px;
   color: var(--bg-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Responsive Code */
@@ -131,9 +134,13 @@ button {
     width: 80%;
   }
 
-  input,
-  button {
+  input{
     width: 100%;
+  }
+
+  button{
+    width: 100%;
+    padding: 1rem;
   }
 
 }
