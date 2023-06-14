@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,400&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+/* Styles for the header and navigation */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-color: #22A699;
+  --primary-color: #F2BE22;
+  --primary-color-shade: #F29727;
+  --bg-white: #ffffff;
+  --font-white: #ffffff;
+  --bg-black: #252323;
+  --font-black: #252323;
+  --light-gray: #d2cdcd;
+  --text-color-gray: rgb(139, 139, 139);
+  --footer-links-color: #ffdc00;
+}
+
+.margin {
+  margin-top: 100px;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background-color: var(--navbar-color);
+  font-weight: bold;
+  padding: 8px;
+}
+
+/* sticky navbar */
+#navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  color: var(--bg-white);
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+.logo-img {
+  width: 100px;
+  height: 100%;
+}
+
+.nav-link {
+  color: var(--bg-white);
+  width: 150px;
+  height: 100%;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  background-color: var(--bg-white);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-center {
+  margin-right: 400px;
+}
+
+.dropdown-item:hover,
+.logout:hover {
+  background-color: var(--light-gray);
+}
+
+.logout {
+  outline: none;
+  border: none;
+  background-color: var(--bg-white);
+  margin-left: 20px;
+}
+
+
+header {
+  margin-bottom: 100px;
+}
+
+/* FOOTER  */
+footer {
+  background-color: var(--primary-color-shade);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  color: var(--font-white);
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 200px;
+}
+
+.footer-logo p {
+  color: #d8d8d8e7;
+  font-size: 15px;
+}
+
+.footer-links {
+  display: flex;
+}
+
+.footer-link-div {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.footer-link-div h3 {
+  font-size: 16px;
+}
+
+.footer-link-div a,
+.footer-link-div p {
+  font-size: 15px;
+  color: var(--footer-links-color);
+}

@@ -1,0 +1,75 @@
+<%- include('partials/header3') %>
+
+<div class="form-container">
+  <form action="/register" method="POST">
+    <h1>Sign Up</h1>
+    <div class="form-group">
+      <label for="firstname">First name</label>
+      <input
+        type="text"
+        placeholder="First Name"
+        name="firstName"
+        id="firstname"
+        autofocus
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last name</label>
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="lastName"
+        id="lastname"
+        autofocus
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        placeholder="email"
+        name="username"
+        id="username"
+        autofocus
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        placeholder="password"
+        name="password"
+        id="password"
+        autofocus
+        required
+      />
+    </div>
+    <p id="password-strength"></p>
+    <div class="form-group">
+      <button>Sign Up</button>
+    </div>
+    <p>Already a User? <a href="login">Log In</a></p>
+  </form>
+</div>
+
+<script>
+  const passwordInput = document.getElementById("password");
+  const passwordStrength = document.getElementById("password-strength");
+
+  passwordInput.addEventListener("input", function () {
+    const password = passwordInput.value;
+    const passwordExpression =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+    if (passwordExpression.test(password)) {
+      passwordStrength.textContent = "Strong Password";
+      passwordStrength.style.color = "green";
+    } else {
+      passwordStrength.textContent = "Weak Password";
+      passwordStrength.style.color = "Red";
+    }
+  });
+</script>
