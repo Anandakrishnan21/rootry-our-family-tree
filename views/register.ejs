@@ -2,7 +2,7 @@
 
 <div class="form-container">
   <form action="/register" method="POST">
-    <h1>Sign Up</h1>
+    <h1>CREATE ACCOUNT</h1>
     <div class="form-group">
       <label for="firstname">First name</label>
       <input
@@ -59,7 +59,7 @@
   const passwordInput = document.getElementById("password");
   const passwordStrength = document.getElementById("password-strength");
 
-  passwordInput.addEventListener("input", function () {
+  passwordInput.addEventListener("input",() =>{
     const password = passwordInput.value;
     const passwordExpression =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;

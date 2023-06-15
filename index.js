@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
 
+// MONGODB CONNECTION
 mongoose
   .connect("mongodb://127.0.0.1:27017/familyDB", { useNewUrlParser: true })
   .then(() => {
@@ -45,18 +46,20 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+// REGISTER
 app.get("/register", (req, res) => {
   res.render("register");
 });
 
 app.post("/register", async (req, res) => {
-  const { password, username } = req.body;
+  const { password, username, firstName } = req.body;
   const user = new User({ username, password });
   await user.save();
   req.session.user_id = user._id;
-  res.redirect("index");
+  res.redirect("index", { firstName: "" });
 });
 
+// LOGIN
 app.get("/login", (req, res) => {
   res.render("login");
 });
@@ -73,10 +76,13 @@ app.post("/login", async (req, res) => {
   }
 });
 
+// INDEX
 app.get("/index", requiredLogin, (req, res) => {
-  res.render("index");
+  const { firstName } = req.body;
+  res.render("index", { firstName });
 });
 
+// LOGOUT
 app.post("/logout", (req, res) => {
   req.session.user_id = null;
   res.redirect("/login");

@@ -22,6 +22,9 @@ const userSchema = new mongoose.Schema({
 
 userSchema.statics.findAndValidate = async function (username, password) {
   const foundUser = await this.findOne({ username });
+  if (!foundUser) {
+    return false;
+  }
   const isValid = await bcrypt.compare(password, foundUser.password);
   return isValid ? foundUser : false;
 };

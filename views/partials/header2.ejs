@@ -9,7 +9,7 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="header2.css" />
+    <link rel="stylesheet" href="css/header2.css" />
     <title>Rootry.com</title>
   </head>
   <body>
@@ -83,13 +83,12 @@
                       class="dropdown-menu"
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
-                      <li><a class="dropdown-item" href="#">Action</a></li>
                       <li>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Search Relatives</a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#"
-                          >Something else here</a
+                          >Search famous Trees</a
                         >
                       </li>
                     </ul>
@@ -146,15 +145,20 @@
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
                       <li>
+                        <a class="dropdown-item" href="#"><h4><%= firstName %></h4></a>
+                      </li>
+                      <li>
                         <a class="dropdown-item" href="#">View Profile</a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">Personal Details</a>
                       </li>
                       <li>
-                        <form action="/logout" method="POST">
-                          <button class="logout">Log out</button>
-                        </form>
+                        <a class="dropdown-item" href="#">
+                          <form action="/logout" method="POST">
+                            <button class="logout">Log out</button>
+                          </form>
+                        </a>
                       </li>
                     </ul>
                   </li>
