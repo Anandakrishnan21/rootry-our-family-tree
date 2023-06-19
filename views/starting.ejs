@@ -1,0 +1,77 @@
+<%- include('partials/header1') %>
+<div class="left-content-div">
+  <div class="content">
+    <p class="content-heading">Discover Your Family</p>
+    <p class="content-p">
+      Expand your family tree, uncover new relatives, and explore the
+      intricacies of other ancestral lineages.
+    </p>
+    <button type="button">Start your family tree</button>
+  </div>
+  <div class="right-content-div">
+    <div class="image">
+      <img src="images/family-tree-png.png" alt="" />
+    </div>
+  </div>
+</div>
+
+<div class="timeline">Tree Creation</div>
+
+<div class="card-container">
+  <div class="card" id="main-card">
+    <img src="https://cdn2.iconfinder.com/data/icons/child-people-face-avatar-3/500/child_162-512.png" alt="" class="iconfinder">
+    <p>You</p>
+  </div>
+  <div class="d-card" id="sub-card">
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/business-people-face-avatar-7/500/business2_75-512.png" alt="" class="iconfinder">
+      <p>Father</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/business-people-face-avatar-7/500/business2_63-512.png" alt="" class="iconfinder">
+      <p>Mother</p>
+    </div>
+  </div>
+  <div class="d-card" id="ssub-card">
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/old-people-face-avatar-2/500/old_74-512.png" alt="" class="iconfinder">
+      <p>Grand Father</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/old-people-face-avatar-1/500/old_62-512.png" alt="" class="iconfinder">
+      <p>Grand Mother</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/old-people-face-avatar-1/500/old_62-512.png" alt="" class="iconfinder">
+      <p>Grand Mother</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn2.iconfinder.com/data/icons/old-people-face-avatar-2/500/old_74-512.png" alt="" class="iconfinder">
+      <p>Grand Father</p>
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') %>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+
+  const observer = new IntersectionObserver(
+    (cards) => {
+      cards.forEach((card) => {
+        if (card.isIntersecting) {
+          card.target.classList.add("show");
+        } else {
+          card.target.classList.remove("show");
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  cards.forEach((card) => {
+    observer.observe(card);
+  });
+</script>

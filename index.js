@@ -43,7 +43,7 @@ const requiredLogin = (req, res, next) => {
 };
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.render("starting");
 });
 
 // REGISTER
@@ -56,7 +56,7 @@ app.post("/register", async (req, res) => {
   const user = new User({ username, password });
   await user.save();
   req.session.user_id = user._id;
-  res.redirect("index", { firstName: "" });
+  res.redirect(`/home?firstName=${firstName}`);
 });
 
 // LOGIN
@@ -70,22 +70,29 @@ app.post("/login", async (req, res) => {
 
   if (foundUser) {
     req.session.user_id = foundUser._id;
-    res.redirect("/index");
+    const firstName = foundUser.firstName;
+    res.redirect(`/home?firstName=${foundUser.firstName}`);
   } else {
     res.redirect("/login");
   }
 });
 
 // INDEX
-app.get("/index", requiredLogin, (req, res) => {
-  const { firstName } = req.body;
-  res.render("index", { firstName });
+app.get("/home", requiredLogin, (req, res) => {
+  const firstName = req.query.firstName;
+  res.render("home", { firstName: firstName });
 });
 
 // LOGOUT
 app.post("/logout", (req, res) => {
-  req.session.user_id = null;
-  res.redirect("/login");
+  req.session.destroy();
+  res.redirect("/");
+});
+
+// PERSONAL DETAILS PAGE
+app.get("/personal", requiredLogin, (req, res) => {
+  const firstName = req.query.firstName;
+  res.render("personal", { firstName: firstName });
 });
 
 app.listen(3000, () => {

@@ -145,13 +145,15 @@
                       aria-labelledby="navbarDarkDropdownMenuLink"
                     >
                       <li>
-                        <a class="dropdown-item" href="#"><h4><%= firstName %></h4></a>
+                        <a class="dropdown-item" href="#"><% if (firstName) { %>
+                          <h4><%= firstName %></h4>
+                        <% } %></a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">View Profile</a>
                       </li>
                       <li>
-                        <a class="dropdown-item" href="#">Personal Details</a>
+                        <a class="dropdown-item" href="personal">Personal Details</a>
                       </li>
                       <li>
                         <a class="dropdown-item" href="#">
@@ -176,5 +178,3 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-  </body>
-</html>
