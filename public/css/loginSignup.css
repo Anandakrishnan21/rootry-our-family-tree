@@ -87,7 +87,7 @@ h1 {
   align-items: center;
   padding: 1.5rem;
   gap: 20px;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
 }
 
 .form-group {
