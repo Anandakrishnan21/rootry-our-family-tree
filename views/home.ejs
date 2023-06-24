@@ -1,70 +1,38 @@
 <%- include('partials/header2', { firstName: firstName }) %>
 <div class="home-section">
   <div class="home-container">
-    <div class="left-home-side">
-      <div class="update-profile">
-        <div class="avatar">
-          <img
-            src="https://cdn2.iconfinder.com/data/icons/child-people-face-avatar-3/500/child_159-512.png"
-            alt=""
-          />
-        </div>
-
-        <div class="update-content">
-          <p class="heading">Introducing My profile</p>
-          <p class="head-para">
-            Add a profile picture, edit your public name and choose what other
-            information you wish to share with our community.
-          </p>
-          <button>Complete your profile</button>
-        </div>
-      </div>
-
-      <div class="share-tree">
-        <div class="share">
-          <p class="heading">Share Your Family Tree</p>
-          <p>
-            Invite your family and friends to view your tree and allow them to
-            merge the tree if they have any relation with you
-          </p>
-          <button>Share Your Tree</button>
-        </div>
-      </div>
-
-      <div class="view-tree-container">
-        <div class="view-tree">
-          <div class="view-tree-content">
+    <div class="top-home-side">
+      <div class="wrapper-home">
+        <div class="left-home-side">
+          <div class="update-profile">
             <div class="avatar">
               <img
                 src="https://cdn2.iconfinder.com/data/icons/child-people-face-avatar-3/500/child_159-512.png"
                 alt=""
               />
             </div>
-            <p class="heading">You last viewed</p>
-            <p class="head-para">
-              Add new branches to your tree to expand the connection
-            </p>
-            <p class="btn"><a href="">View tree</a></p>
+
+            <div class="update-content">
+              <p class="heading">Introducing My profile</p>
+              <p class="head-para">
+                Add a profile picture, edit your public name and choose what
+                other information you wish to share with our community.
+              </p>
+              <button>Complete your profile</button>
+            </div>
           </div>
         </div>
-        <div class="request-tree-connection">
-          <div class="view-timeline">
-            <div class="avatar">
-              <img
-                src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/640/timeline-512.png"
-                alt=""
-              />
-            </div>
-            <p class="heading">Your Moments</p>
+        <div class="share-tree">
+          <div class="share">
+            <p class="heading">Share Your Family Tree</p>
             <p class="head-para">
-              Add the most memorable moments from your life
+              Invite your family and friends to view your tree and allow them to
+              merge the tree if they have any relation with you
             </p>
-            <p class="btn"><a href="#">View Records</a></p>
+            <button>Share Your Tree</button>
           </div>
         </div>
       </div>
-    </div>
-    <div class="right-home-side">
       <div class="person-search">
         <form action="" method="POST">
           <p class="heading">Search All Record</p>
@@ -116,15 +84,52 @@
           <button>Search</button>
         </form>
       </div>
-      <div class="quick-search">
-        <p class="heading">Quick Links</p>
-        <div class="quick-search-ul">
-          <ul>
-            <li><a href="#">Form Group</a></li>
-            <li><a href="#">Newspaper & magazine</a></li>
-            <li><a href="#">Family Record</a></li>
-            <li><a href="#">Tree Search</a></li>
-          </ul>
+    </div>
+
+    <div class="bottom-home-side">
+      <div class="bottom-wrapper">
+        <div class="view-tree-container">
+          <div class="view-tree">
+            <div class="view-tree-content">
+              <div class="avatar">
+                <img
+                  src="https://cdn2.iconfinder.com/data/icons/child-people-face-avatar-3/500/child_159-512.png"
+                  alt=""
+                />
+              </div>
+              <p class="heading">You last viewed</p>
+              <p class="head-para">
+                Add new branches to your tree to expand the connection
+              </p>
+              <p class="btn"><a href="">View tree</a></p>
+            </div>
+          </div>
+          <div class="request-tree-connection">
+            <div class="view-timeline">
+              <div class="avatar">
+                <img
+                  src="https://cdn3.iconfinder.com/data/icons/font-awesome-solid/640/timeline-512.png"
+                  alt=""
+                />
+              </div>
+              <p class="heading">Your Moments</p>
+              <p class="head-para">
+                Add the most memorable moments from your life
+              </p>
+              <p class="btn"><a href="#">View Records</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="quick-search">
+          <p class="heading">Quick Links</p>
+          <div class="quick-search-ul">
+            <ul>
+              <li><a href="#">Form Group</a></li>
+              <li><a href="#">Newspaper & magazine</a></li>
+              <li><a href="#">Family Record</a></li>
+              <li><a href="#">Tree Search</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

@@ -112,15 +112,31 @@ header {
 .home-container {
   width: 1100px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem;
+  gap: 2rem;
 }
 
-/* LEFT SIDE */
+.top-home-side {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+/* TOP SIDE */
+
+.wrapper-home {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 .left-home-side {
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -191,28 +207,6 @@ header {
   background-color: var(--primary-color-shade);
 }
 
-.view-tree-container {
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20px;
-}
-
-.view-tree .view-tree-content,
-.request-tree-connection .view-timeline {
-  width: 100%;
-  background-color: var(--bg-white);
-  height: 100%;
-  border-radius: 0.5rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .share-tree {
   height: 200px;
   padding: 0.5rem;
@@ -225,7 +219,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .share button {
@@ -237,17 +231,10 @@ header {
   outline: none;
 }
 
-.right-home-side {
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .person-search,
 .quick-search {
-  width: 100%;
-  height: 520px;
+  width: 35%;
+  height: 530px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   background-color: var(--light-gray);
   border-radius: 0.5rem;
@@ -281,6 +268,36 @@ header {
   border: 0.5px solid var(--text-color-gray);
   border-radius: 3px;
   outline: none;
+}
+
+/* BOTTOM SIDE */
+
+.bottom-wrapper,
+.view-tree-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.view-tree-container {
+  width: 65%;
+  height: 300px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.view-tree .view-tree-content,
+.request-tree-connection .view-timeline {
+  width: 100%;
+  background-color: var(--bg-white);
+  height: 100%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .quick-search {
@@ -325,10 +342,80 @@ a {
 }
 
 /* Small */
-@media (width<768px) {}
+@media (width<768px) {
+  .bottom-home-side {
+    width: 100%;
+  }
+
+  .top-home-side {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 150px;
+  }
+
+  .wrapper-home,
+  .person-search {
+    width: 80%;
+  }
+
+  .quick-search {
+    width: 80%;
+    padding: 0.5rem;
+  }
+
+  .bottom-wrapper {
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  .view-tree-container {
+    width: 80%;
+    flex-direction: column;
+    margin-bottom: 150px;
+  }
+
+  .quick-search-ul {
+    width: 100%;
+    height: 100%;
+  }
+
+  .head-para {
+    font-size: 100%;
+    text-align: justify;
+  }
+}
 
 /* Extra small */
 @media (width<576px) {}
 
 /* Highly Extra small */
-@media (width<480px) {}
+@media (width<480px) {
+  .share button {
+    height: 100%;
+    background-color: none;
+  }
+
+  .update-content button {
+    padding: 0.5rem;
+  }
+
+  .wrapper-home,
+  .person-search {
+    width: 90%;
+  }
+
+  .quick-search,
+  .view-tree-container {
+    width: 90%;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .head-para {
+    font-size: 15px;
+  }
+
+}
