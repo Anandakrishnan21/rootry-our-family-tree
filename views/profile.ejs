@@ -1,25 +1,24 @@
 <%- include('partials/header2', { firstName: firstName }) %>
+<link rel="stylesheet" href="./css/profile.css" />
 <div class="view-details">
-  <form action="/profile" method="GET">
-    <div class="form-group">
-      <label for="firstname">First Name:</label>
-      <input
-        type="text"
-        placeholder="First Name"
-        name="firstName"
-        class="firstName"
-        value="<%= firstName %>" readonly
-      />
+  <div class="views">
+    <div class="view">
+      <div class="avatar">
+        <img
+          src="https://cdn2.iconfinder.com/data/icons/child-people-face-avatar-3/500/child_159-512.png"
+          alt=""
+        />
+      </div>
+      <div class="details">
+        <div class="membership">
+          <p class="name"><%= firstName %><%= lastName %></p>
+          <p>
+            Member since <span><%= accountCreatedYear.getFullYear()%></span>
+          </p>
+        </div>
+        <img src="images/rootry logo 1.png" alt="logo" />
+      </div>
     </div>
-    <div class="form-group">
-      <label for="firstname">Last Name:</label>
-      <input
-        type="text"
-        placeholder="Last Name"
-        name="lastName"
-        class="lastName"
-        value="<%= lastName %>" readonly
-      />
-    </div>
-  </form>
+  </div>
 </div>
+<%- include('partials/footer') %>

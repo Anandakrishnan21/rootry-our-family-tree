@@ -91,7 +91,7 @@ app.post("/logout", (req, res) => {
 });
 
 // PERSONAL DETAILS PAGE
-app.get("/home/profile", requiredLogin, async (req, res) => {
+app.get("/profile", requiredLogin, async (req, res) => {
   try {
     const userId = req.session.user_id;
     const user = await User.findById(userId);
@@ -99,12 +99,14 @@ app.get("/home/profile", requiredLogin, async (req, res) => {
       res.render("profile", {
         firstName: user.firstName,
         lastName: user.lastName,
+        accountCreatedYear: user.createdAt,
       });
     }
   } catch (error) {
     res.render("error", { error });
   }
 });
+
 
 app.listen(3000, () => {
   console.log("server is running on port 3000");

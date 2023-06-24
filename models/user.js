@@ -18,6 +18,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, "password cannot be blank"],
   },
+  createdAt: 
+  { type: Date, default: Date.now } 
 });
 
 userSchema.statics.findAndValidate = async function (username, password) {
