@@ -1,0 +1,38 @@
+<%- include('partials/header2', { firstName: firstName }) %>
+<link rel="stylesheet" href="./css/personal.css">
+<div class="personal-details">
+    <div class="form-container">
+        <div class="form-content">
+            <div class="personal-right-div">
+                <p class="heading">My Account</p>
+                <p><a href="#">Personal Details</a></p>
+                <p><a href="#">Security settings</a></p>
+                <p><a href="#">Communication preference</a></p>
+                <p><a href="#">Privacy</a></p>
+                <p><a href="#">Notification</a></p>
+                <p><a href="#">Saved tree search</a></p>
+                <p><a href="#">Refer a friend</a></p>
+            </div>
+            <form action="" method="">
+                <p class="heading">Public Profile</p>
+                <div class="form-groups">
+                    <input type="text" placeholder="First Name" name="firstName" class="firstName" value="<%= firstName %>">
+                </div>
+                <div class="form-groups">
+                    <input type="text" placeholder="Last Name" name="lastName" class="lastName" value="<%= lastName  %>">
+                </div>
+                <div class="form-groups">
+                    <input type="date" name="birthday" class="birthday">
+                </div>
+                <div class="form-groups">
+                    <input type="text" placeholder="Address" name="address" class="address">
+                </div>
+                <div class="form-groups">
+                    <input type="text" placeholder="Location" name="location" class="location">
+                </div>
+                <button class="update-btn">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>

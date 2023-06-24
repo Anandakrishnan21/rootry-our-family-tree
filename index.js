@@ -90,7 +90,7 @@ app.post("/logout", (req, res) => {
   res.redirect("/");
 });
 
-// PERSONAL DETAILS PAGE
+// PROFILE PAGE
 app.get("/profile", requiredLogin, async (req, res) => {
   try {
     const userId = req.session.user_id;
@@ -100,6 +100,22 @@ app.get("/profile", requiredLogin, async (req, res) => {
         firstName: user.firstName,
         lastName: user.lastName,
         accountCreatedYear: user.createdAt,
+      });
+    }
+  } catch (error) {
+    res.render("error", { error });
+  }
+});
+
+// PERSONAL DETAILS PAGE
+app.get("/personal", requiredLogin, async (req, res) => {
+  try {
+    const userId = req.session.user_id;
+    const user = await User.findById(userId);
+    if (user) {
+      res.render("personal", {
+        firstName: user.firstName,
+        lastName: user.lastName,
       });
     }
   } catch (error) {
