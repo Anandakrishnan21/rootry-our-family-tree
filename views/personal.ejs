@@ -13,7 +13,7 @@
                 <p><a href="#">Saved tree search</a></p>
                 <p><a href="#">Refer a friend</a></p>
             </div>
-            <form action="" method="">
+            <form action="/personal" method="post">
                 <p class="heading">Public Profile</p>
                 <div class="form-groups">
                     <input type="text" placeholder="First Name" name="firstName" class="firstName" value="<%= firstName %>">
@@ -22,13 +22,13 @@
                     <input type="text" placeholder="Last Name" name="lastName" class="lastName" value="<%= lastName  %>">
                 </div>
                 <div class="form-groups">
-                    <input type="date" name="birthday" class="birthday">
+                    <input type="date" name="birthday" class="birthday" value="<%= birthday %>">
                 </div>
                 <div class="form-groups">
-                    <input type="text" placeholder="Address" name="address" class="address">
+                    <input type="text" placeholder="Address" name="address" class="address" value="<%= address %>">
                 </div>
                 <div class="form-groups">
-                    <input type="text" placeholder="Location" name="location" class="location">
+                    <input type="text" placeholder="Location" name="location" class="location" value="<%= location %>">
                 </div>
                 <button class="update-btn">Update</button>
             </form>

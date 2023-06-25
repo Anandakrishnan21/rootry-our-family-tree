@@ -116,6 +116,9 @@ app.get("/personal", requiredLogin, async (req, res) => {
       res.render("personal", {
         firstName: user.firstName,
         lastName: user.lastName,
+        birthday: user.birthday,
+        address: user.address,
+        location: user.location,
       });
     }
   } catch (error) {
@@ -123,6 +126,31 @@ app.get("/personal", requiredLogin, async (req, res) => {
   }
 });
 
+app.post("/personal", async (req, res) => {
+  try {
+    const userId = req.session.user_id;
+    const user = await User.findById(userId);
+    if (user) {
+      user.firstName = req.body.firstName;
+      user.lastName = req.body.lastName;
+      user.birthday = req.body.birthday;
+      user.address = req.body.address;
+      user.location = req.body.location;
+
+      await user.save();
+
+      res.render("personal", {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        birthday: user.birthday,
+        address: user.address,
+        location: user.location,
+      });
+    }
+  } catch (error) {
+    res.render("error", { error });
+  }
+});
 
 app.listen(3000, () => {
   console.log("server is running on port 3000");

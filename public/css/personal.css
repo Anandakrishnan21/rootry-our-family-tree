@@ -115,4 +115,8 @@ input,
 }
 
 /* Extra small */
-@media (width<576px) {}
+@media (width<576px) {
+    .form-content{
+        flex-direction: column-reverse;
+    }
+}
