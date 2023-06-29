@@ -1,0 +1,253 @@
+.tree-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.trees {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.tree {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tree-structure {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.column {
+    width: 80px;
+    height: 150px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.zoomButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    margin-bottom: 50px;
+}
+
+.zoom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color-shade);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    height: 80px;
+    width: 150px;
+    gap: 5px;
+}
+
+.zoom-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 25px;
+    z-index: 999;
+}
+
+.tree-structure {
+    position: relative;
+}
+
+.column:not(:last-child) {
+    position: relative;
+}
+
+.column:first-child .avatar:after,
+.column:nth-child(3) .avatar:after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 100%;
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+}
+
+.column1:first-child .avatar:after,
+.column1:nth-child(3) .avatar:after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 100%;
+    width: 80px;
+    height: 2px;
+    background-color: #000;
+}
+
+.column:first-child:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    transform: translateX(100px);
+    width: 1px;
+    height: 130px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.c-column:first-child:after,
+.c-column:nth-child(3):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateX(100px);
+    width: 1px;
+    height: 130px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.rows:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(120px);
+    width: 150px;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.rowz:nth-child(1):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 21%;
+    transform: translateY(120px);
+    width: 280px;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.rowz:nth-child(3):before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12%;
+    transform: translateY(120px);
+    width: 380px;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.name:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -460%;
+    transform: translateY(120px);
+    width: 520px;
+    height: 1px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.alive:after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateY(-50px);
+    width: 1px;
+    height: 40px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.alives:after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    transform: translateY(600px);
+    width: 1px;
+    height: 40px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.alivess:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(115px);
+    width: 1px;
+    height: 40px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.alivesss:after{
+    content: "";
+    position: absolute;
+    transform: translateY(-145px);
+    width: 1px;
+    height: 40px;
+    background-color: #000;
+    z-index: 1;
+}

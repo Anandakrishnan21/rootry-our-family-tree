@@ -168,6 +168,11 @@
   outline: none;
 }
 
+button a{
+  text-decoration: none;
+  color: var(--font-white);
+}
+
 /* BOTTOM SIDE */
 
 .bottom-wrapper,

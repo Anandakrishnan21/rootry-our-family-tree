@@ -1,0 +1,310 @@
+.tree-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.trees {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.tree {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tree-structure {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.rows {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+.column {
+    width: 130px;
+    height: 180px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.questionButton {
+    border: 0;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.question-container{
+    position: absolute;
+    top: 12%;
+    left: 3%;
+    background-color: #fff;
+    width: 420px;
+    height: 620px;
+    z-index: 2;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border-radius: 0.5rem;
+    display: none;
+}
+
+.form-container1,
+.form-container form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+
+form .form-groups {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.closeButton,
+.closeButton1,
+.close-btn2,
+.close-btn3,
+.close-btn4,
+.close-btn5{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+.close-btn,
+.close-btn1,
+.close-btn2,
+.close-btn3,
+.close-btn4,
+.close-btn5{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button-div,
+.button-div1,
+.button-div2,
+.button-div3,
+.button-div4,
+.button-div5{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+form input,
+form button {
+  width: 100%;
+  height: 35px;
+  padding: 10px;
+  border: 0.5px solid var(--text-color-gray);
+  outline: none;
+  padding: 0.5rem;
+}
+
+form button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    border-radius: 0.25rem;
+}
+
+form .add-to-tree{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: none;
+    background-color: var(--primary-color-shade);
+    color: var(--font-white);
+    border-radius: 0.25rem;
+}
+
+.male,
+.female,
+.other,
+.living,
+.descent,
+.unknown{
+    width: 35%;
+    outline: none;
+    border: 1px solid black;
+    background-color: var(--bg-white);
+    padding: 0.5rem;
+}
+
+.male,
+.living{
+    border-radius: 0.25rem 0 0 0.25rem; 
+}
+
+.other,
+.unknown{
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.active {
+    display: block !important;
+}
+
+.zoomButton {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem;
+    margin-bottom: 50px;
+}
+
+.zoom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color-shade);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    height: 80px;
+    width: 150px;
+    gap: 5px;
+}
+
+.zoom-btn {
+    width: 50px;
+    height: 50px;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-size: 25px;
+    z-index: 999;
+}
+
+.tree-structure {
+    position: relative;
+}
+
+
+.column:not(:last-child) {
+    position: relative;
+}
+
+.column:first-child .questionButton:after,
+.column:nth-child(3) .questionButton:after {
+    content: "";
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 100%;
+    width: 80px;
+    height: 2px;
+    background-color: #000;
+}
+
+.add-grand:first-child:after ,
+.add-grand:nth-child(3):after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(100px);
+  width: 1px;
+  height: 170px;
+  background-color: #000;
+  z-index: 1;
+}
+
+.parents{
+    gap: 16rem;
+}
+
+.add-father:first-child .questionButton:after{
+    content: "";
+    position: absolute;
+    top: calc(50% + 5px);
+    left: 100%;
+    width: 255px;
+    height: 2px;
+    background-color: #000;
+}
+
+.add-father:first-child:after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 120%;
+  transform: translateX(100px);
+  width: 1px;
+  height: 170px;
+  background-color: #000;
+  z-index: 1;
+}
+
+.activate{
+    background-color: var(--primary-color-shade);
+    color: var(--font-white);
+}
+
+
+.imgs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

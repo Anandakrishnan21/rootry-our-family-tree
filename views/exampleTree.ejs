@@ -1,0 +1,234 @@
+<%- include('partials/header2') %>
+<link rel="stylesheet" href="./css/exampleTree.css" />
+<div class="tree-container">
+  <div class="trees">
+    <div class="tree">
+      <div class="tree-structure">
+        <div class="rows roww">
+          <div class="column column1 c-column">
+            <div class="avatar">
+              <img src="images/Rajni-Tendulkar.jpg" alt="" />
+            </div>
+            <p class="name">Ranjni T</p>
+            <p>Living</p>
+          </div>
+          <div class="column">
+            <div class="avatar">
+              <img src="images/Ramesh_Tendulkar.jpg" alt="" />
+            </div>
+            <p>Ramesh T</p>
+            <p>Died</p>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="row rowz">
+            <div class="column">
+              <div class="avatar">
+                <img src="images/<%= image %>" alt="" />
+              </div>
+              <p><%= firstName %> <%= lastName %></p>
+              <p>Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="images/ajith.jpg" alt="" />
+              </div>
+              <p>Ajith T</p>
+              <p class="alives">Living</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="images/Savita-Tendulkar.webp" alt="" />
+              </div>
+              <p>Savita T</p>
+              <p class="alive">Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p>Living</p>
+            </div>
+          </div>
+          <div class="row rowz">
+            <div class="column">
+              <div class="avatar">
+                <img src="images/Anjali-Tendulkar.jpg" alt="" />
+              </div>
+              <p>Anjali T</p>
+              <p>Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="images/sachinTendulkar.jpg" alt="" />
+              </div>
+              <p>Sachin T</p>
+              <p class="alives">Living</p>
+            </div>
+          </div>
+        </div>
+        <div class="rows">
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p>Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p class="alivess">Living</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p>Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>unknown</p>
+              <p class="alivess">Living</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p class="alive">Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p>Unknown</p>
+              <p>Living</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="images/sara.jpg" alt="" />
+              </div>
+              <p>Sara T</p>
+              <p class="alivesss">Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="images/gill.jpeg" alt="" />
+              </div>
+              <p>S Gill</p>
+              <p>Living</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <div class="avatar">
+                <img src="" alt="" />
+              </div>
+              <p></p>
+              <p>Living</p>
+            </div>
+            <div class="column">
+              <div class="avatar">
+                <img src="images/arjun.avif" alt="" />
+              </div>
+              <p>Arjun T</p>
+              <p class="alivesss">Living</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="zoomButton">
+  <div class="zoom">
+    <div id="zoomInButton" class="zoom-btn">+</div>
+    <div id="zoomOutButton" class="zoom-btn">-</div>
+  </div>
+</div>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  const treeStructure = document.querySelector(".tree-structure");
+  const zoomInButton = document.getElementById("zoomInButton");
+  const zoomOutButton = document.getElementById("zoomOutButton");
+  
+  // VARIABLES
+  let scale = 1;
+  let isDragging = false;
+  let dragStartX, dragStartY;
+  let offsetX = 0,
+    offsetY = 0;
+  let navbar = document.getElementById("navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 0) {
+      navbar.classList.add("shadow");
+    } else {
+      navbar.classList.remove("shadow");
+    }
+  });
+
+  // DRAGGING
+  treeStructure.addEventListener("mousedown", (event) => {
+    isDragging = true;
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+  });
+
+  treeStructure.addEventListener("mousemove", (event) => {
+    if (!isDragging) return;
+
+    const dragX = event.clientX - dragStartX;
+    const dragY = event.clientY - dragStartY;
+
+    offsetX += dragX;
+    offsetY += dragY;
+
+    treeStructure.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+
+    dragStartX = event.clientX;
+    dragStartY = event.clientY;
+  });
+
+  treeStructure.addEventListener("mouseup", () => {
+    isDragging = false;
+  });
+
+  treeStructure.addEventListener("mouseleave", () => {
+    isDragging = false;
+  });
+
+  // ZOOM-IN AND ZOOM-OUT BUTTON FUNCTIONS
+
+  zoomInButton.addEventListener("click", () => {
+    scale += 0.1;
+    treeStructure.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+  });
+
+  zoomOutButton.addEventListener("click", () => {
+    scale -= 0.1;
+    treeStructure.style.transform = `translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
+  });
+</script>

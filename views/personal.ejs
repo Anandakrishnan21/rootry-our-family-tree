@@ -13,7 +13,7 @@
                 <p><a href="#">Saved tree search</a></p>
                 <p><a href="#">Refer a friend</a></p>
             </div>
-            <form action="/personal" method="post">
+            <form action="/personal" method="post" enctype="multipart/form-data">
                 <p class="heading">Public Profile</p>
                 <div class="form-groups">
                     <input type="text" placeholder="First Name" name="firstName" class="firstName" value="<%= firstName %>">
@@ -29,6 +29,9 @@
                 </div>
                 <div class="form-groups">
                     <input type="text" placeholder="Location" name="location" class="location" value="<%= location %>">
+                </div>
+                <div class="form-groups">
+                    <input type="file" placeholder="Add your image" name="image" class="your-image" value="<%= image %>">
                 </div>
                 <button class="update-btn">Update</button>
             </form>
