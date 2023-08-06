@@ -308,3 +308,7 @@ form .add-to-tree{
     align-items: center;
     justify-content: center;
 }
+
+.name,.status{
+    color: var(--primary-color-shade);
+}

@@ -229,6 +229,10 @@ img {
   font-weight: 600;
 }
 
+a{
+  text-decoration: none;
+  color: var(--font-white);
+}
 
 /* Responsive Code */
 

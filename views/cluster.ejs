@@ -1,0 +1,52 @@
+<%- include('partials/header2', { firstName: firstName }) %>
+<link rel="stylesheet" href="./css/cluster.css" />
+<div class="home-section">
+  <div class="home-container">
+    <div class="cluster-groups">
+      <div class="cluster" id="sports"><span>0</span> Sports</div>
+      <div class="cluster"><span>0</span> Arts</div>
+      <div class="cluster"><span>0</span> Gaming</div>
+      <div class="cluster"><span>0</span> Dance</div>
+      <div class="cluster"><span>0</span> singer</div>
+    </div>
+    <div class="cluster-form" id="clusterForm">
+      <div class="closeButton">
+        <div class="close-btn" id="closeBtn">&times;</div>
+      </div>
+      <div class="form-inputs">
+        <form action="/cluster" method="POST">
+          <p class="name">Form a Group</p>
+          <p>Currently there is no any group formed by your family members for sports</p>
+          <div class="form-groups">
+            <label for="group">Group Name</label>
+            <input type="text" placeholder="Group Name" name="group" class="group-name" />
+          </div>
+          <div class="form-groups">
+            <label for="admin">Admin Name</label>
+            <input type="text" placeholder="Admin Name" name="name" class="username" value="<%= firstName %> "/>
+          </div>
+          <div class="form-groups">
+            <button class="add">Create a Cluster</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+
+<script>
+  const closeBtn = document.getElementById("closeBtn");
+  const sports = document.getElementById("sports");
+  const clusterForm = document.getElementById("clusterForm");
+
+  sports.addEventListener("click",()=>{
+    clusterForm.classList.add("active");
+  })
+
+  closeBtn.addEventListener("click",()=>{
+    clusterForm.classList.remove("active");
+  })
+  
+</script>

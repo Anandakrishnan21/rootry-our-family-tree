@@ -1,0 +1,60 @@
+<%- include('partials/header2', { firstName: firstName }) %>
+<link rel="stylesheet" href="./css/feedback.css" />
+<div class="home-section">
+  <div class="home-container">
+    <div class="form-container">
+      <div class="form-left">
+        <img
+          src="https://img.freepik.com/free-vector/employer-meeting-job-applicant-pre-employment-assessment-employee-evaluation-assessment-form-report-performance-review-concept-illustration_335657-2058.jpg?size=626&ext=jpg&ga=GA1.2.139143041.1681061669&semt=ais"
+          alt=""
+        />
+      </div>
+      <div class="form-right">
+        <form
+          action="https://formsubmit.co/f2c4710f3d37e330edc31c4aa90a9272"
+          method="POST"
+        >
+          <p class="name">SHARE YOUR THOUGHT</p>
+          <div class="form-group">
+            <label for="email">Full Name</label>
+            <input
+              type="text"
+              placeholder="Full firstName"
+              name="name"
+              id="name"
+              autofocus
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              placeholder="email address"
+              name="username"
+              id="username"
+              autofocus
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Tell Your opinion about our website"
+            ></textarea>
+          </div>
+          <link rel="stylesheet" href="" />
+          <div class="form-group">
+            <button class="btn">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
